@@ -1,11 +1,10 @@
-cclass Color (object):
+###############################################_____Общие классы____################################################
+class Color:
     Empty = 0
     Black = 1
     White = 2
 
-
-
-class ChessMan(object):
+class ChessMan:
     IMG = None
 
     def __init__(self,color):
@@ -13,6 +12,12 @@ class ChessMan(object):
 
     def __repr__(self):
         return self.IMG[0  if self.color == Color.White else 1]
+
+
+
+
+###############################################_____создание фигур и доски____################################################
+
 
 
 
@@ -45,13 +50,18 @@ class Board(object):
         self.board[0][3] = King(Color.Black)
         self.board[7][3] = King(Color.White)
 
+
     def __repr__(self):
         res=''
         for y in range(8):
             res+=''.join(map(str,self.board[y]))+'\n'
         return res
 
+
+
+
+###############################################_____ВЫЗОВ МЕТОДОВ____################################################
+
+
 obj = Board()
-
 print(obj)
-
