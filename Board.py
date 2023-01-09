@@ -1,4 +1,4 @@
-class Color (object):
+cclass Color (object):
     Empty = 0
     Black = 1
     White = 2
@@ -41,9 +41,9 @@ class King(ChessMan):
 class Board(object):
     def __init__(self):
         self.board  = [['.']*8 for _ in range(8)]
-        self.board[1][2] = Pawn(1)
-        self.board[0][3] = King(1)
-        self.board[7][3] = King(0)
+        self.board[1][2] = Pawn(Color.Black)
+        self.board[0][3] = King(Color.Black)
+        self.board[7][3] = King(Color.White)
 
     def __repr__(self):
         res=''
@@ -54,3 +54,4 @@ class Board(object):
 obj = Board()
 
 print(obj)
+
